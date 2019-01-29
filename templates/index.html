@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Machine Learning with Docker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a href="/">
+            <span class="navbar-brand mb-0 h1">DockerML</span>
+        </a>
+    </nav>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="display-4">
+                    Machine Learning with Docker
+                </h1>
+                <hr>
+                <p class="lead">
+                    This is an example of a machine learning model deployed using Flask and Docker.
+                </p>
+                <h3>
+                    Explanation
+                </h3>
+                <p class="lead">
+                    This location may include an explanation to the ML model and approach taken. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis voluptatibus, incidunt cumque, commodi et voluptates eveniet culpa eos quia ex fuga! Magnam optio molestias porro accusamus iure debitis provident sed!
+                </p>
+                <br>
+                <!-- This is the boilerplate to include a HTML form that Flask generates -->
+                <form action="/" method="POST">
+                    {{ form.hidden_tag() }}
+
+                    {{ form.sepal_length.label }}
+                    {{ form.sepal_length(size=32) }} <br>
+                    <!-- This section allows us to display any validation errors -->
+                    <!-- such as incorrect input -->
+                    {% for message in form.sepal_length.errors %}
+                        <div class="alert alert-danger">
+                            {{ message }}
+                        </div>    
+                    {% endfor %}
+                    <!-- End of errors section -->
+                    <br>
+
+                    {{ form.sepal_width.label }}
+                    {{ form.sepal_width(size=32) }} <br>
+                    {% for message in form.sepal_width.errors %}
+                        <div class="alert alert-danger">
+                            {{ message }}
+                        </div>  
+                    {% endfor %}
+                    <br>
+
+                    {{ form.petal_length.label }}
+                    {{ form.petal_length(size=32) }} <br>
+                    {% for message in form.petal_length.errors %}
+                        <div class="alert alert-danger">
+                            {{ message }}
+                        </div>  
+                    {% endfor %}
+                    <br>
+
+                    {{ form.petal_width.label }}
+                    {{ form.petal_width(size=32) }} <br>
+                    {% for message in form.petal_width.errors %}
+                        <div class="alert alert-danger">
+                            {{ message }}
+                        </div>  
+                    {% endfor %}
+                    <br>
+                    <button type="submit" class="btn btn-primary btn-lg">Predict species</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
